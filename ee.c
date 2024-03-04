@@ -84,14 +84,14 @@
 #endif
 #endif
 
-#if defined(STM32F070xB)
+
 #define   _EE_SIZE              2048
 #define   _EE_ADDR_INUSE        (((uint32_t)0x08000000) | (_EE_SIZE * _EE_USE_FLASH_PAGE_OR_SECTOR))
 #define   _EE_PAGE_OR_SECTOR    PAGE
-#if (_EE_USE_FLASH_PAGE_OR_SECTOR > 63)
-#error  "Please Enter correct address, maximum is (63)"
+#if (_EE_USE_FLASH_PAGE_OR_SECTOR > 127)
+#error  "Please Enter correct address, maximum is (127)"
 #endif
-#endif
+
 
 #if defined(STM32F070xC)
 #define   _EE_SIZE              2048
@@ -101,6 +101,7 @@
 #error  "Please Enter correct address, maximum is (127)"
 #endif
 #endif
+
 
 #if defined(STM32F405xx) || defined(STM32F407xx) || defined(STM32F415xx) || defined(STM32F417xx)
 #define   _EE_SIZE              (1024 * 128)
